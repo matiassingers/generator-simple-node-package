@@ -5,6 +5,8 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
   initializing: function () {
     this.pkg = require('../package.json');
 
+    this.cli = false;
+
     this.email = this.user.git.email();
     this.name = this.user.git.name();
 
@@ -47,6 +49,24 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
         done();
       }.bind(this));
     },
+    askIfCLI: function() {
+      var done = this.async();
+
+      var prompts = [
+        {
+          type: 'confirm',
+          name: 'cli',
+          message: 'Will this module include a CLI?',
+          default: true
+        }
+      ];
+
+      this.prompt(prompts, function(props) {
+        this.cli = props.cli;
+
+        done();
+      }.bind(this));
+    },
     askForPersonalWebsite: function() {
       var done = this.async();
 
@@ -70,6 +90,10 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
     app: function () {
       this.template('index.js', 'index.js');
       this.template('test.js', 'test.js');
+
+      if(this.cli){
+        this.template('cli.js', 'cli.js');
+      }
     },
 
     projectfiles: function () {

@@ -17,6 +17,21 @@ var <%= _.camelize(moduleName) %> = require('<%= _.slugify(moduleName) %>');
 
 ```
 
+<% if(cli) { %>
+## CLI
+
+```sh
+$ npm install --global <%= _.slugify(moduleName) %>
+```
+
+```sh
+$ <%= _.slugify(moduleName) %> --help
+
+  Example
+    <%= _.slugify(moduleName) %>
+    
+```
+<% } %>
 
 ## License
 
