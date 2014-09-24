@@ -14,6 +14,23 @@ $ npm install --global generator-simple-node-package
 
 ```sh
 $ yo simple-node-package
+[?] What is the name of your module? hello world
+[?] Please provide a short description for the project: say hello to the world!
+[?] Will this module include a CLI? Yes
+[?] Please provide your personal website: http://hello.world
+   create index.js
+   create test.js
+   create cli.js
+   create readme.md
+   create license
+   create package.json
+   create .editorconfig
+   create .gitignore
+   create .jshintrc
+   create .travis.yml
+
+
+I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
 ```
 
 ## todo
