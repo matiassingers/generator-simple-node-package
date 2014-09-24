@@ -1,0 +1,31 @@
+{
+  "name": "generator-simple-node-package",
+  "version": "0.1.0",
+  "description": "start a simple node module project, including CLI",
+  "main": "app/index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matiassingers/generator-simple-node-package"
+  },
+  "author": "Matias Singers <mail@matiassingers.com> (http://mts.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matiassingers/generator-simple-node-package/issues"
+  },
+  "homepage": "https://github.com/matiassingers/generator-simple-node-package",
+  "dependencies": {
+    "yeoman-generator": "^0.17.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
