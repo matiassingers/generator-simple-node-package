@@ -16,6 +16,9 @@ $ npm install --global generator-simple-node-package
 $ yo simple-node-package
 ```
 
+## todo
+- tests
+- documentation
 
 ## License
 
