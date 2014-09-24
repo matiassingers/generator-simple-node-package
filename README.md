@@ -35,7 +35,9 @@ I'm all done. Running npm install for you to install the required dependencies. 
 
 ## todo
 - tests
-- documentation
+- create GitHub repo
+- init [TravisCI](https://travis-ci.org/) for project
+- init [Gemnasium](https://gemnasium.com/dashboard) for project
 
 ## License
 
