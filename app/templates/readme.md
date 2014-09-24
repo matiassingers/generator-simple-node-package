@@ -1,4 +1,4 @@
-# <%= _.slugify(moduleName) %>
+# <%= _.slugify(moduleName) %> [![Build Status](http://img.shields.io/travis/<%= githubUsername %>/<%= _.slugify(moduleName) %>.svg?style=flat-square)](https://travis-ci.org/<%= githubUsername %>/<%= _.slugify(moduleName) %>) [![Dependency Status](http://img.shields.io/gemnasium/<%= githubUsername %>/<%= _.slugify(moduleName) %>.svg?style=flat-square)](https://gemnasium.com/<%= githubUsername %>/<%= _.slugify(moduleName) %>)
 > <%= description %>
 
 ## Install
