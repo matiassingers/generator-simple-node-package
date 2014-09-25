@@ -1,5 +1,4 @@
-# generator-simple-node-package
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/matiassingers/generator-simple-node-package?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# generator-simple-node-package [![Gitter](http://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/matiassingers/generator-simple-node-package?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 > start a simple node module project, including CLI
 
 Heavily inspired by how [Sindre Sorhus](https://github.com/sindresorhus) structures his small Node.js modules.
