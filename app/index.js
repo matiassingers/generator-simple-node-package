@@ -83,6 +83,14 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
   },
 
   writing: {
+    before: function() {
+      if(!this.website){
+        this.website = this.githubUsername ? 'https://github.com/' + this.githubUsername : 'https://github.com/';
+        this.log('\n\nCouldn\'t find your website in git config under \'user.website\'');
+        this.log('Defaulting to Github url: ' + this.website);
+      }
+    },
+
     app: function () {
       this.template('index.js', 'index.js');
       this.template('test.js', 'test.js');
