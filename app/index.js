@@ -1,4 +1,6 @@
 'use strict';
+
+var path = require('path');
 var yeoman = require('yeoman-generator');
 
 var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
@@ -19,12 +21,11 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
     askForName: function() {
       var done = this.async();
 
-      var prompts = [
-        {
-          name: 'moduleName',
-          message: 'What is the name of your module?'
-        }
-      ];
+      var prompts = [{
+        name: 'moduleName',
+        message: 'What is the name of your module?',
+        default: path.basename(process.cwd())
+      }];
 
       this.prompt(prompts, function(props) {
         this.moduleName = props.moduleName;
