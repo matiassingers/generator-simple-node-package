@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var shell = require('shelljs');
 var npmName = require('npm-name');
 var yeoman = require('yeoman-generator');
 
@@ -10,8 +11,10 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
 
     this.cli = false;
 
-    this.email = this.user.git.email();
     this.name = this.user.git.name();
+    this.email = this.user.git.email();
+
+    this.website = shell.exec('git config --get user.website', { silent: true }).output.trim();
 
     this.user.github.username(function(err, username){
       this.githubUsername = username;
@@ -67,19 +70,12 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
           name: 'cli',
           message: 'Will this module include a CLI?',
           default: true
-        },
-        {
-          name: 'website',
-          message: 'Please provide your personal website',
-          default: 'http://mts.io'
         }
       ];
 
       this.prompt(prompts, function(props) {
         this.description = props.description;
         this.cli = props.cli;
-
-        this.website = props.website;
 
         done();
       }.bind(this));
