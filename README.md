@@ -17,7 +17,6 @@ $ yo simple-node-package
 [?] What is the name of your module? hello world
 [?] Please provide a short description for the project: say hello to the world!
 [?] Will this module include a CLI? Yes
-[?] Please provide your personal website: http://hello.world
    create index.js
    create test.js
    create cli.js
