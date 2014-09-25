@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var npmName = require('npm-name');
 var yeoman = require('yeoman-generator');
 
 var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
@@ -25,11 +26,30 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
         name: 'moduleName',
         message: 'What is the name of your module?',
         default: path.basename(process.cwd())
+      }, {
+        type: 'confirm',
+        name: 'pkgName',
+        message: 'The name above already exists on npm, choose another?',
+        default: true,
+        when: function(answers) {
+          var done = this.async();
+
+          npmName(answers.moduleName, function (err, available) {
+            if (!available) {
+              done(true);
+            }
+
+            done(false);
+          });
+        }
       }];
 
       this.prompt(prompts, function(props) {
-        this.moduleName = props.moduleName;
-        this.config.setmoduleName = props.moduleName;
+        if (props.pkgName) {
+          return this.askForModuleName();
+        }
+
+        this.moduleName = props.name;
 
         done();
       }.bind(this));
