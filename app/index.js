@@ -54,44 +54,20 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
         done();
       }.bind(this));
     },
-    askForDescription: function() {
+    askFor: function() {
       var done = this.async();
 
       var prompts = [
         {
           name: 'description',
           message: 'Please provide a short description for the project'
-        }
-      ];
-
-      this.prompt(prompts, function(props) {
-        this.description = props.description;
-
-        done();
-      }.bind(this));
-    },
-    askIfCLI: function() {
-      var done = this.async();
-
-      var prompts = [
+        },
         {
           type: 'confirm',
           name: 'cli',
           message: 'Will this module include a CLI?',
           default: true
-        }
-      ];
-
-      this.prompt(prompts, function(props) {
-        this.cli = props.cli;
-
-        done();
-      }.bind(this));
-    },
-    askForPersonalWebsite: function() {
-      var done = this.async();
-
-      var prompts = [
+        },
         {
           name: 'website',
           message: 'Please provide your personal website',
@@ -100,6 +76,9 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
       ];
 
       this.prompt(prompts, function(props) {
+        this.description = props.description;
+        this.cli = props.cli;
+
         this.website = props.website;
 
         done();
