@@ -49,10 +49,10 @@ var SimpleNodePackageGenerator = yeoman.generators.Base.extend({
 
       this.prompt(prompts, function(props) {
         if (props.pkgName) {
-          return this.askForModuleName();
+          return this.askForName();
         }
 
-        this.moduleName = props.name;
+        this.moduleName = props.moduleName;
 
         done();
       }.bind(this));
