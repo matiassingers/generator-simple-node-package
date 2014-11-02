@@ -20,7 +20,6 @@ var SimpleNodePackageGenerator = module.exports = function SimpleNodePackageGene
 
   this.cli = false;
 
-
   this.name = this.user.git.name;
   this.email = this.user.git.email;
 
@@ -38,6 +37,12 @@ SimpleNodePackageGenerator.prototype.prompting = function prompting() {
   var done = this.async();
 
   var prompts = [{
+    name: 'github',
+    message: 'What is your GitHub username?',
+    when: function(){
+      return this.githubUsername;
+    }
+  }, {
     name: 'moduleName',
     message: 'What is the name of your module?',
     default: path.basename(process.cwd())
@@ -60,6 +65,7 @@ SimpleNodePackageGenerator.prototype.prompting = function prompting() {
   }];
 
   this.prompt(prompts, function(props) {
+    this.githubUsername = props.github || this.githubUsername;
     if (props.pkgName) {
       return this.askForName();
     }
