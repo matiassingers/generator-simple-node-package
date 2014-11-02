@@ -30,9 +30,9 @@
   },
   "homepage": "https://github.com/matiassingers/generator-simple-node-package",
   "dependencies": {
-    "npm-name": "~1.0.1",
-    "shelljs": "~0.3.0"
     "yeoman-generator": "0.17.7",
+    "npm-name": "1.0.1",
+    "shelljs": "0.3.0"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
