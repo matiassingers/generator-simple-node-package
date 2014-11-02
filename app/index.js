@@ -66,11 +66,11 @@ SimpleNodePackageGenerator.prototype.prompting = function prompting() {
 
   this.prompt(prompts, function(props) {
     this.githubUsername = props.github || this.githubUsername;
-    if (props.pkgName) {
-      return this.askForName();
-    }
-
     this.moduleName = props.moduleName;
+
+    if (props.pkgName) {
+      return this.askFor();
+    }
 
     done();
   }.bind(this));
