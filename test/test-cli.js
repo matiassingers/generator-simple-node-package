@@ -18,7 +18,7 @@ describe('simple node package generator', function(){
   });
 
   it('package.json should contain correct bin script', function(){
-    var pkg = require('package.json');
+    var pkg = require('./tmp/package.json');
 
     assert.deepEqual(pkg.bin, { tmp: 'cli.js' });
   });
