@@ -33,6 +33,16 @@ $ <%= _.slugify(moduleName) %> --help
 ```
 <% } %>
 
+## API
+
+#### Option
+
+Type: `String`  
+Default: `undefined`
+
+Description of the option.
+
+
 ## License
 
 MIT © [<%= name %>](<%= website %>)
