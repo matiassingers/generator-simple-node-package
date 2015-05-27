@@ -1,4 +1,4 @@
-# <%= _.slugify(moduleName) %> [![Build Status](http://img.shields.io/travis/<%= githubUsername %>/<%= _.slugify(moduleName) %>.svg?style=flat-square)](https://travis-ci.org/<%= githubUsername %>/<%= _.slugify(moduleName) %>) [![Dependency Status](http://img.shields.io/gemnasium/<%= githubUsername %>/<%= _.slugify(moduleName) %>.svg?style=flat-square)](https://gemnasium.com/<%= githubUsername %>/<%= _.slugify(moduleName) %>)
+# <%= _.slugify(moduleName) %> [![Build Status][travis-badge]][travis-link] [![Dependency Status][gemnasium-badge]][gemnasium-link] [![Coverage Status][coveralls-badge]][coveralls-link]
 > <%= description %>
 
 ## Install
@@ -46,3 +46,12 @@ Description of the option.
 ## License
 
 MIT © [<%= name %>](<%= website %>)
+
+[travis-badge]: http://img.shields.io/travis/<%= githubUsername %>/<%= _.slugify(moduleName) %>.svg?style=flat-square
+[travis-link]: https://travis-ci.org/<%= githubUsername %>/<%= _.slugify(moduleName) %>
+
+[gemnasium-badge]: http://img.shields.io/gemnasium/<%= githubUsername %>/<%= _.slugify(moduleName) %>.svg?style=flat-square
+[gemnasium-link]: https://gemnasium.com/<%= githubUsername %>/<%= _.slugify(moduleName) %>
+
+[coveralls-badge]: http://img.shields.io/coveralls/<%= githubUsername %>/<%= _.slugify(moduleName) %>.svg?style=flat-square
+[coveralls-link]: https://coveralls.io/r/<%= githubUsername %>/<%= _.slugify(moduleName) %>
