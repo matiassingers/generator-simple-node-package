@@ -4,7 +4,7 @@
   "description": "start a simple node module project, including CLI",
   "main": "app/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --no-timeouts"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -30,14 +30,16 @@
   },
   "homepage": "https://github.com/matiassingers/generator-simple-node-package",
   "dependencies": {
-    "yeoman-generator": "0.17.7",
-    "npm-name": "1.0.1",
-    "shelljs": "0.3.0"
+    "npm-name": "2.0.0",
+    "shelljs": "0.5.3",
+    "underscore.string": "3.2.2",
+    "yeoman-generator": "0.21.1"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
   },
   "devDependencies": {
-    "mocha": "2.0.1"
+    "mocha": "2.3.4",
+    "yeoman-assert": "2.1.0"
   }
 }

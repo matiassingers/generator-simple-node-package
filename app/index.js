@@ -5,6 +5,7 @@ var path = require('path');
 var shell = require('shelljs');
 var npmName = require('npm-name');
 var yeoman = require('yeoman-generator');
+var _ = require('underscore.string');
 
 var SimpleNodePackageGenerator = module.exports = function SimpleNodePackageGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
@@ -17,7 +18,7 @@ var SimpleNodePackageGenerator = module.exports = function SimpleNodePackageGene
   });
 
   this.pkg = require('../package.json');
-
+  this.underscore = _;
   this.cli = false;
 
   this.name = this.user.git.name();
@@ -54,13 +55,17 @@ SimpleNodePackageGenerator.prototype.prompting = function prompting() {
     when: function(answers) {
       var done = this.async();
 
-      npmName(answers.moduleName, function (err, available) {
-        if (!available) {
-          done(true);
-        }
+      npmName(answers.moduleName)
+        .then(function(available) {
+          if (!available) {
+            done(true);
+          }
 
-        done(false);
-      });
+          done(false);
+        })
+        .catch(function(err) {
+          throw err;
+        });
     }
   }];
 
