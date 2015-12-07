@@ -2,6 +2,7 @@
 
 var path = require('path');
 var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-assert');
 
 describe('simple node package generator', function () {
   beforeEach(function (done) {
@@ -28,7 +29,7 @@ describe('simple node package generator', function () {
       'test.js'
     ];
 
-    helpers.assertFiles(expected);
-    helpers.assertNoFile('cli.js');
+    assert.file(expected);
+    assert.noFile('cli.js');
   });
 });

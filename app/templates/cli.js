@@ -2,7 +2,7 @@
 'use strict';
 
 var pkg = require('./package.json');
-var <%= _.camelize(moduleName) %> = require('./');
+var <%= underscore.camelize(moduleName) %> = require('./');
 var argv = process.argv.slice(2);
 
 function help() {
@@ -11,7 +11,7 @@ function help() {
       '  ' + pkg.description,
     '',
     '  Example',
-    '    <%= _.slugify(moduleName) %> ',
+    '    <%= underscore.slugify(moduleName) %> ',
     ''
   ].join('\n'));
 }
@@ -27,6 +27,6 @@ if (argv.indexOf('--version') !== -1) {
 }
 
 
-<%= _.camelize(moduleName) %>(argv[0], function(){
+<%= underscore.camelize(moduleName) %>(argv[0], function(){
 
 });
