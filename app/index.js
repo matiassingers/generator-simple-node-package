@@ -20,16 +20,17 @@ var SimpleNodePackageGenerator = module.exports = function SimpleNodePackageGene
   this.pkg = require('../package.json');
   this.underscore = _;
   this.cli = false;
-
   this.name = this.user.git.name();
   this.email = this.user.git.email();
 
   this.website = shell.exec('git config --get user.website', { silent: true }).output.trim();
 
   this.githubUsername = void 0;
-  this.user.github.username(function(err, username){
-    this.githubUsername = username;
-  }.bind(this));
+  if (this.email) {
+    this.user.github.username(function(err, username){
+      this.githubUsername = username;
+    }.bind(this));
+  }
 };
 
 util.inherits(SimpleNodePackageGenerator, yeoman.generators.Base);
